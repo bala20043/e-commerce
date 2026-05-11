@@ -37,7 +37,7 @@ export const CategoryGrid = () => {
                 <h2 className="section-title">Explore <i>Styles</i></h2>
                 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-5 h-auto md:h-[600px]">
-                    {categories.map((cat, i) => (
+                    {categories.map((cat) => (
                         <motion.div
                             key={cat.name}
                             initial={{ opacity: 0, scale: 0.95 }}

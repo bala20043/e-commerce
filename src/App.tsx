@@ -273,8 +273,8 @@ function App() {
                                                 transition={{ delay: i * 0.1 }}
                                                 className="flex gap-5"
                                             >
-                                                <div className="w-20 h-24 bg-[#181818] flex items-center justify-center text-3xl">
-                                                    {item.emoji}
+                                                <div className="w-20 h-24 bg-[#181818] overflow-hidden">
+                                                    <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
                                                 </div>
                                                 <div className="flex-grow">
                                                     <h4 className="text-[0.9rem] mb-1">{item.name}</h4>
