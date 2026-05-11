@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+@theme {
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "DM Sans", sans-serif;
+  --color-primary-gold: #C9A84C;
+  --color-bright-gold: #E8C96B;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background-color: #080808 !important;
+    color: #F0EBE0;
+    font-family: "DM Sans", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+    cursor: none;
+  }
+
+  /* Deep Luxury Background with Animation */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+      radial-gradient(circle at 20% 20%, rgba(201, 168, 76, 0.08) 0%, transparent 40%),
+      radial-gradient(circle at 80% 80%, rgba(201, 168, 76, 0.05) 0%, transparent 40%),
+      #080808;
+    z-index: -1;
+    animation: bgPulse 15s infinite alternate ease-in-out;
+  }
+
+  /* Grain Overlay for Texture */
+  body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+    opacity: 0.04;
+    pointer-events: none;
+    z-index: 100;
+  }
+
+  @keyframes bgPulse {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1) rotate(2deg); }
+  }
+
+  h1, h2, h3, h4, .price {
+    font-family: "Playfair Display", serif;
+  }
+}
+
+:root {
+    --bg-color: #080808;
+    --surface-1: #111111;
+    --surface-2: #181818;
+    --primary-gold: #C9A84C;
+    --bright-gold: #E8C96B;
+    --text-primary: #F0EBE0;
+    --text-muted: #888888;
+    --sale-red: #E05454;
+    --border-color: #222222;
+}
+
+/* Custom Cursor */
+#custom-cursor {
+    position: fixed;
+    width: 12px;
+    height: 12px;
+    background: #C9A84C;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: difference;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease, height 0.3s ease, background 0.3s ease;
+}
+
+#custom-cursor.hover {
+    width: 50px;
+    height: 50px;
+    background: rgba(201, 168, 76, 0.2);
+    border: 1px solid #C9A84C;
+    mix-blend-mode: normal;
+}
+
+.section-label {
+    @apply inline-block text-[0.7rem] uppercase tracking-[0.3em] text-[#C9A84C] mb-4 border-l-2 border-[#C9A84C] pl-3;
+}
+
+.section-title {
+    @apply text-[clamp(2.5rem,8vw,5rem)] mb-16 leading-tight;
+}
+
+.section-title i {
+    font-style: italic;
+    color: #C9A84C;
+}
+
+.interactive {
+    cursor: none;
+}
